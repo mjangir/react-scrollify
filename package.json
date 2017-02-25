@@ -1,10 +1,10 @@
 {
   "name": "react-scrollify",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "React Scrollify Component",
   "repository": {
     "type": "git",
-    "url": "https://github.com/you/repo.git"
+    "url": "https://github.com/mjangir/react-scrollify.git"
   },
   "license": "MIT",
   "scripts": {

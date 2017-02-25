@@ -1,10 +1,11 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
+import Container from '../components/Container';
 import Button from '../index';
 
-storiesOf('Button', module)
+storiesOf('Container', module)
   .add('default view', () => (
-    <Button onClick={ action('button clicked') }>Hello</Button>
+    <Container width="100">Manish Jangir Manish Jangir Manish JangirManish JangirManish Jangir Manish JangirManish Jangir</Container>
   ))
   .add('some emojies as the text', () => (
     <Button>😀 😎 👍 💯</Button>
