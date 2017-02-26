@@ -5,7 +5,7 @@ import Button from '../index';
 
 storiesOf('Container', module)
   .add('default view', () => (
-    <Container width="100">Manish Jangir Manish Jangir Manish JangirManish JangirManish Jangir Manish JangirManish Jangir</Container>
+    <Container width="100px"><div style={{width: '300px', height: '500px'}}>Manish Jangir Manish Jangir Manish JangirManish JangirManish Jangir Manish JangirManish Jangir</div></Container>
   ))
   .add('some emojies as the text', () => (
     <Button>😀 😎 👍 💯</Button>
