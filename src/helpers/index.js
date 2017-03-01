@@ -9,3 +9,7 @@ exports.outerWidth = function(element) {
          toInt(element.style.borderLeftWidth) +
          toInt(element.style.borderRightWidth);
 }
+
+exports.css = function (element, styleName) {
+  return window.getComputedStyle(element)[styleName];
+}

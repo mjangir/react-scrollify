@@ -5,7 +5,12 @@ import Button from '../index';
 
 storiesOf('Container', module)
   .add('default view', () => (
-    <Container width="100px"><div style={{width: '300px', height: '500px'}}>Manish Jangir Manish Jangir Manish JangirManish JangirManish Jangir Manish JangirManish Jangir</div></Container>
+    <Container width="300px"><div style={{width: '600px', height: '500px'}}>Perfect scrollbar Perfect scrollbar Perfect scrollbar Perfect scrollbar
+    Perfect scrollbar Perfect scrollbar Perfect scrollbar Perfect scrollbar Perfect scrollbar Perfect scrollbar Perfect scrollbar
+    Perfect scrollbar Perfect scrollbar Perfect scrollbar Perfect scrollbar Perfect scrollbar Perfect scrollbar
+    Perfect scrollbar Perfect scrollbar Perfect scrollbar Perfect scrollbar Perfect scrollbar Perfect scrollbar
+    Perfect scrollbar Perfect scrollbar Perfect scrollbar Perfect scrollbar Perfect scrollbar Perfect scrollbar
+    Perfect scrollbar Perfect scrollbar Perfect scrollbar Perfect scrollbar Perfect scrollbar Perfect scrollbar </div></Container>
   ))
   .add('some emojies as the text', () => (
     <Button>😀 😎 👍 💯</Button>

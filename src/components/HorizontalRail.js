@@ -13,39 +13,43 @@ class HorizontalRail extends React.Component {
     }
 
     componentDidMount() {
-    
+
     }
-    
+
     handleOnClick(e) {
         const {
-            horizontalBarLeft, 
+            horizontalBarLeft,
             containerWidth
         }                   = this.props;
         const positionLeft  = e.pageX - window.pageXOffset - ReactDOM.findDOMNode(this).getBoundingClientRect().left;
         const direction     = positionLeft > horizontalBarLeft ? 1 : -1;
         const newLeft       = ReactDOM.findDOMNode(this).parentNode.scrollLeft + direction * containerWidth;
-        
+
         this.updateScrollAndGeometry(newLeft);
-        
+
         e.stopPropagation();
     }
-    
+
     updateScrollAndGeometry(newLeft) {
-        console.log(newLeft);
+        // this.props.updateContainerScroll('left', newLeft);
+        // this.props.updateGeometry();
     }
 
     render() {
         const style = {
                 width     : this.props.horizontalRailWidth + 'px',
                 left      : this.props.horizontalRailLeft + 'px',
-                top       : this.props.horizontalRailTop + 'px',
-                bottom    : this.props.horizontalRailBottom + 'px'
         };
-      
+        if(this.props.isHorizontalBarUsingBottom) {
+            style['bottom'] = this.props.horizontalRailBottom + 'px';
+        } else {
+            style['top'] = this.props.horizontalRailTop + 'px';
+        }
+
         return (
-            <div 
-                className="ps-scrollbar-x-rail" 
-                style={style} 
+            <div
+                className="ps-scrollbar-x-rail"
+                style={style}
                 onClick={this.handleOnClick}
             >
                 <HorizontalBar {...this.props}/>

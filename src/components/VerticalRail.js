@@ -12,39 +12,46 @@ class VerticalRail extends React.Component {
     }
 
     componentDidMount() {
-    
+
     }
-    
+
     handleOnClick(e) {
-        const {
-            verticalBarTop, 
+        if(e.target !== ReactDOM.findDOMNode(this.refs.ybar)) {
+            const {
+            verticalBarTop,
             containerHeight
-        }                   = this.props;
-        const positionTop   = e.pageY - window.pageYOffset - ReactDOM.findDOMNode(this).getBoundingClientRect().top;
-        const direction     = positionTop > verticalBarTop ? 1 : -1;
-        const newTop        = ReactDOM.findDOMNode(this).parentNode.scrollTop + direction * containerHeight;
-        
-        this.updateScrollAndGeometry(newTop);
-        
+            }                   = this.props;
+            const positionTop   = e.pageY - window.pageYOffset - ReactDOM.findDOMNode(this).getBoundingClientRect().top;
+            const direction     = positionTop > verticalBarTop ? 1 : -1;
+            const newTop        = ReactDOM.findDOMNode(this).parentNode.scrollTop + direction * containerHeight;
+            this.updateScrollAndGeometry(newTop);
+        }
+
+
         e.stopPropagation();
     }
-    
+
     updateScrollAndGeometry(newTop) {
-        console.log(newTop);
+        // this.props.updateContainerScroll('top', newTop);
+        // this.props.updateGeometry();
+        // this.props.updateState();
     }
 
     render() {
         const style = {
                 height    : this.props.verticalRailHeight + 'px',
-                top       : this.props.verticalRailTop + 'px',
-                left      : this.props.verticalRailLeft + 'px',
-                right     : this.props.verticalRailRight + 'px'
+                top       : this.props.verticalRailTop + 'px'
         };
-        
+        if(this.props.isVerticalBarUsingRight) {
+            style['right'] = this.props.verticalRailRight + 'px';
+        } else {
+            style['left'] = this.props.verticalRailLeft + 'px';
+        }
+
         return (
-            <div 
-                className="ps-scrollbar-y-rail" 
-                style={style} 
+            <div
+                className="ps-scrollbar-y-rail"
+                style={style}
                 onClick={this.handleOnClick}
             >
                 <VerticalBar {...this.props}/>
