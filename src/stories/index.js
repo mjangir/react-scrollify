@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import ReactScrollify from '../components/Container';
-import Button from '../index';
 
 storiesOf('Container', module)
   .add('Default View', () => (
